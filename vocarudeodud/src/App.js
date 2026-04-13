@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { LoginApp } from './components/LoginApp';
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
         >
           Learn React
         </a>
+        <LoginApp></LoginApp>
       </header>
     </div>
   );
 }
+
 
 export default App;
