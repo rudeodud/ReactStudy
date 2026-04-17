@@ -1,25 +1,13 @@
+import { useState } from "react";
+
 export default function Hellow(){
-    function showName(){
-        console.log("Mike");
-    }
-    function showAge(age){
-        console.log(age);
-    }
-    function showText(txt){
-        console.log(txt);
-    }
+    //let name = "Mike"
+    const[name, setName] = useState('Mike');
     return (
         <div>
-            <h1>Hellow</h1>
-            <button onClick={showName}>show name</button>
+            <h2>{name}</h2>
             <button onClick={()=>{
-                    showAge(10)
-                }
-            }>show age</button>
-            <input type="text" onChange={(e)=>{
-                const txt = e.target.value;
-                showText(txt);
-            }
-            }/>
+                setName(name ==="Mike" ? "Jane" : "Mike")
+            }}>changeName</button>
         </div>
     );}
