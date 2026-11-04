@@ -1,11 +1,30 @@
 function main(value){
-    console.log(1);
-    console.log(2);
     value();
 }
 
-function sub(){
-    console.log("i am sub");
+main(() => {
+//    console.log("i am sub");
+
+});
+
+function repeat(count){
+    for(let idx = 1; idx <= count; idx++){
+        console.log(idx);
+    }    
 }
 
-main(sub); 
+function repeatDouble(count){
+    for(let idx = 1; idx <= count; idx++){
+        console.log(idx * 2);
+    }    
+}
+
+function repeatTriple(count){
+    for(let idx = 1; idx <= count; idx++){
+        console.log(idx * 3);
+    }    
+}
+
+repeat(5)
+repeatDouble(5);
+repeatTriple(5);
