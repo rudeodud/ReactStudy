@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <Button text={"메일"} color={"red"}></Button>
-      <Button text={"카페"} color={"blue"}></Button>
-      <Button text={"블로그"}color={"green"}></Button>
+      <Button text={"카페"} ></Button>
+      <Button text={"블로그"} ></Button>
     </>
   )
 }
