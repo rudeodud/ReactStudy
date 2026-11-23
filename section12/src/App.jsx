@@ -1,15 +1,14 @@
 import './App.css';
 import { Routes, Route, Link, useNavigate } from 'react-router-dom';
-import Home from './pages/home';
+import Home from './pages/Home';
 import Diary from './pages/Diary';
 import New from './pages/New';
 import Notfound from './pages/Notfound';
+import Button from './components/Button';
+import Header from './components/Header';
 
-import emotion1 from './assets/emotion1.png'
-import emotion2 from './assets/emotion2.png'
-import emotion3 from './assets/emotion3.png'
-import emotion4 from './assets/emotion4.png'
-import emotion5 from './assets/emotion5.png'
+import { getEmotionImage } from "./util/get-emotion-image"
+
 
 function App() {
   const nav = useNavigate();
@@ -20,21 +19,21 @@ function App() {
 
   return (
     <>
-    <div>
-      <img src={emotion1}/>
-      <img src={emotion2}/>
-      <img src={emotion3}/>
-      <img src={emotion4}/>
-      <img src={emotion5}/>
-    </div>
-    <div>
-      <Link to={"/"}>Home</Link>
-      <Link to={"/new"}>New</Link>
-      <Link to={"/diary"}>diary</Link>
-    </div>
-    <button onClick={onClickButton}>
-      New 페이지로 이동
-    </button>
+    <Header title={"Header"}
+      rightChild={<Button text={"right"}/>}
+      leftChild={<Button text={"left"}/>}
+    />
+
+    <Button text={"123"} type={"DEFAULT"} onClick={() => {
+      console.log("123번 버튼 클릭");
+    }}/>
+    <Button text={"123"} type={"POSITIVE"} onClick={() => {
+      console.log("123번 버튼 클릭");
+    }}/>
+    <Button text={"123"} type={"NEGATIVE"} onClick={() => {
+      console.log("123번 버튼 클릭");
+    }}/>
+
     <Routes>
       <Route path='/' element={<Home />}/>
       <Route path='/new' element={<New />}/>
